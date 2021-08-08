@@ -1,0 +1,19 @@
+<section>
+  <h1>Blue Ball Game</h1>
+  <p style="margin: 5px;">
+    Instructions: <br>
+    1) Each Player will have <b>5</b> chance to make correct choice.<br>
+    2) You have to guess and find the hidden blue button <br>
+    3) Button you click will reveal color <br>
+    4) Red indicates button is located at bigger number <br>
+    5) Green indicate button is located at lesser number <br>
+  </p>
+  <div>
+    <input type="button" (click)="createButtons()" value="play" class="btn btn-outline-success"><br>
+    <ng-container *ngFor="let ball of balls">
+      <input type="button" (click)="alert(ball)" value="{{ball.ballIndex}}" [style.background-color]="ball.ballColor"
+        style="border-radius: 50%; margin-top: 20px; margin-left: 5px;">
+    </ng-container>
+  </div><br>
+  <p [innerHtml]="msg"></p>
+</section>
